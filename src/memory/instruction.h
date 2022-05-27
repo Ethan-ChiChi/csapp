@@ -1,33 +1,6 @@
 #include <stdint.h>
 #include <stdio.h>
 
-// fake cpu
-typedef struct CPU
-{
-    union
-    {
-        struct
-        {
-            uint8_t al;
-            uint8_t ah;
-        };
-        uint16_t ax;
-        uint32_t eax;
-        uint64_t rax;
-    };
-    uint64_t rbx;
-    uint64_t rcx;
-    uint64_t rdx;
-    uint64_t rsi;
-    uint64_t rdi;
-    uint64_t rbp;
-    uint64_t rsp;
-
-    uint64_t rip;
-} cpu_t;
-
-cpu_t cpu;
-
 // fake memory
 #define MM_LEN 1000
 
@@ -51,10 +24,13 @@ typedef enum OD_TYPE
 typedef struct OD
 {
     od_type_t type;
-    uint64_t imm;
-    uint64_t scal;
-    uint64_t reg1;
-    uint64_t reg2;
+
+    int64_t imm;
+    int64_t scal;
+    uint64_t *reg1;
+    uint64_t *reg2;
+
+    char code[100];
 } od_t;
 
 typedef struct INSTRUCT_STRUCT
