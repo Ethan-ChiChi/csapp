@@ -1,3 +1,6 @@
+#ifndef elf_guard
+#define elf_guard
+
 #include<stdlib.h>
 #include<stdint.h>
 
@@ -6,4 +9,6 @@
 
 #define INST_LEN 15
 
-uint8_t program[INST_LEN];
+inst_t program[INST_LEN];
+
+#endif
