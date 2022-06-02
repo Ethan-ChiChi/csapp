@@ -32,7 +32,7 @@ int main()
     print_stack();
 
     // run inst
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 4; i++)
     {
         instruction_cycle();
 
