@@ -32,7 +32,7 @@ int main()
     print_stack();
 
     // run inst
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 15; i++)
     {
         instruction_cycle();
 
@@ -44,8 +44,8 @@ int main()
 
     int match = 1;
     match = match && (reg.rax == 0x1234abcd);
-    match = match && (reg.rbx == 0x555555555180);
-    match = match && (reg.rcx == 0x555555555180);
+    match = match && (reg.rbx == 0x555555555190);
+    match = match && (reg.rcx == 0x555555555190);
     match = match && (reg.rdx == 0x12340000);
     match = match && (reg.rsi == 0xabcd);
     match = match && (reg.rdi == 0x12340000);

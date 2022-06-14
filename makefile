@@ -10,6 +10,7 @@ CODE = ./src/memory/instruction.c ./src/disk/code.c ./src/memory/dram.c ./src/cp
  .PHONY: csapp
  csapp:
 	$(CC) $(CFLAGS) -I$(SRC) $(CODE) -o $(EXECUTABLE)
-
-run:
 	./$(EXECUTABLE)
+
+clear:
+	rm -f *.o *~ $(EXECUTABLE)
